@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiovascular System | Medical Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Cardiovascular System</h1>
+        <p>The body's transport network, delivering oxygen, nutrients, and removing waste.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="skeletal.html">Skeletal System</a></li>
+            <li><a href="muscular.html">Muscular System</a></li>
+            <li><a href="nervous.html">Nervous System</a></li>
+            
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p>The cardiovascular system consists of the <strong>heart, blood vessels, and blood</strong>, working together to transport essential substances throughout the body.</p>
+            <ul>
+                <li><strong>Functions:</strong> Delivers oxygen and nutrients, removes waste, regulates temperature, and maintains pH balance.</li>
+                <li><strong>Importance:</strong> Essential for sustaining life and supporting all other body systems.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Heart Anatomy</h2>
+            <p>The heart is a <strong>muscular organ</strong> that pumps blood through the circulatory system.</p>
+            <ul>
+                <li><strong>Atria:</strong> Upper chambers that receive blood.</li>
+                <li><strong>Ventricles:</strong> Lower chambers that pump blood out.</li>
+                <li><strong>Valves:</strong> Ensure one-way blood flow (e.g., mitral, tricuspid, aortic, pulmonary).</li>
+                <li><strong>Coronary Arteries:</strong> Supply oxygen-rich blood to the heart muscle.</li>
+                <li><strong>Pericardium:</strong> Protective sac surrounding the heart.</li>
+                <li><strong>Septum:</strong> Wall dividing the left and right sides of the heart.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Blood Circulation</h2>
+            <p>Blood circulates through two primary pathways:</p>
+            <ul>
+                <li><strong>Systemic Circulation:</strong> Oxygenated blood is delivered to tissues.</li>
+                <li><strong>Pulmonary Circulation:</strong> Blood is oxygenated in the lungs.</li>
+            </ul>
+            <p><strong>Cardiac Cycle:</strong> The sequence of events in one heartbeat, including contraction (systole) and relaxation (diastole).</p>
+        </section>
+
+        <section>
+            <h2>Types of Blood Vessels</h2>
+            <ul>
+                <li><strong>Arteries:</strong> Carry oxygen-rich blood away from the heart.</li>
+                <li><strong>Veins:</strong> Return deoxygenated blood to the heart.</li>
+                <li><strong>Capillaries:</strong> Facilitate exchange of gases and nutrients.</li>
+                <li><strong>Venules & Arterioles:</strong> Small vessels connecting capillaries to veins and arteries.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Blood Components</h2>
+            <ul>
+                <li><strong>Red Blood Cells:</strong> Transport oxygen via hemoglobin.</li>
+                <li><strong>White Blood Cells:</strong> Defend against infections.</li>
+                <li><strong>Platelets:</strong> Aid in blood clotting.</li>
+                <li><strong>Plasma:</strong> Fluid carrying nutrients, hormones, and waste.</li>
+            </ul>
+            <p><strong>Fun Fact:</strong> An adult has about 5 liters of blood circulating in their body.</p>
+        </section>
+
+        <section>
+            <h2>Common Cardiovascular Disorders</h2>
+            <ul>
+                <li><strong>Hypertension:</strong> High blood pressure affecting arteries.</li>
+                <li><strong>Atherosclerosis:</strong> Plaque buildup narrowing blood vessels.</li>
+                <li><strong>Heart Attack:</strong> Blockage of coronary arteries leading to tissue damage.</li>
+                <li><strong>Stroke:</strong> Disruption of blood flow to the brain.</li>
+                <li><strong>Arrhythmia:</strong> Irregular heartbeat.</li>
+                <li><strong>Heart Failure:</strong> Heart's inability to pump blood efficiently.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How to Keep Your Cardiovascular System Healthy</h2>
+            <ul>
+                <li>Exercise regularly (at least 150 minutes per week).</li>
+                <li>Eat a balanced diet low in saturated fats and salt.</li>
+                <li>Avoid smoking and limit alcohol consumption.</li>
+                <li>Manage stress and get enough sleep.</li>
+                <li>Monitor blood pressure and cholesterol levels.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Interactive Quiz</h2>
+            <p>Test your knowledge on the cardiovascular system!</p>
+            <button onclick="startQuiz()">Start Quiz</button>
+            <p id="quizQuestion">Waiting for the quiz...</p>
+            <input type="text" id="quizAnswer" placeholder="Type your answer here">
+            <button onclick="submitAnswer()">Submit Answer</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Medical Learning Hub | Contact us at info@medicalhub.com</p>
+    </footer>
+
+    <script>
+        function startQuiz() {
+            document.getElementById("quizQuestion").innerText = "Which blood vessel carries oxygen-rich blood away from the heart?";
+        }
+        function submitAnswer() {
+            let answer = document.getElementById("quizAnswer").value.toLowerCase();
+            if (answer === "artery" || answer === "arteries") {
+                alert("Correct!");
+            } else {
+                alert("Try again!");
+            }
+        }
+    </script>

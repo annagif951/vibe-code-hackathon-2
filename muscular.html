@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscular System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Muscular System</h1>
+        <nav>
+            <ul>
+                <li><a href="skeletal.html">Skeletal System</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="nervous.html">Nervous System</a></li>
+                <li><a href="cardiovascular.html">Cardiovascular System</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p>The muscular system consists of <strong>over 600 muscles</strong> that facilitate movement, maintain posture, and regulate essential functions like blood circulation.</p>
+            <p>Muscles work in coordination with the skeletal and nervous systems to produce voluntary and involuntary movements. They also play a role in maintaining body temperature through heat generation during contraction.</p>
+        </section>
+
+        <section>
+            <h2>Types of Muscle Tissue</h2>
+            <ul>
+            <li><strong>Skeletal Muscle:</strong> Voluntary muscles attached to bones, enabling movement. These muscles are striated and can be consciously controlled.</li>
+            <li><strong>Cardiac Muscle:</strong> Involuntary muscle found only in the heart, responsible for pumping blood. Cardiac muscle cells are branched and interconnected for synchronized contractions.</li>
+            <li><strong>Smooth Muscle:</strong> Involuntary muscles lining the organs, controlling functions like digestion, blood vessel constriction, and respiration. These muscles are non-striated and work automatically.</li>
+            </ul>
+            <p>Each muscle type has unique structural and functional properties suited to its role in the body.</p>
+        </section>
+
+        <section>
+            <h2>Muscle Contraction & Physiology</h2>
+            <p>Muscles contract via the <strong>sliding filament theory</strong>, where <strong>actin</strong> and <strong>myosin</strong> proteins interact. During contraction, myosin heads bind to actin filaments and pull them inward, shortening the muscle fiber.</p>
+            <ul>
+                <li><strong>ATP (Adenosine Triphosphate):</strong> Powers muscle contractions by providing energy for myosin head movement and detachment.</li>
+                <li><strong>Calcium Ions:</strong> Released from the sarcoplasmic reticulum, they enable actin-myosin binding by exposing binding sites on actin.</li>
+                <li><strong>Neuromuscular Junction:</strong> The synapse where a motor neuron communicates with a muscle fiber, triggering contraction via neurotransmitters like acetylcholine.</li>
+                <li><strong>Sarcomere:</strong> The basic contractile unit of muscle fiber, composed of repeating actin and myosin filaments.</li>
+                <li><strong>Muscle Fatigue:</strong> Occurs when muscles lose the ability to contract efficiently, often due to depletion of ATP or accumulation of lactic acid.</li>
+            </ul>
+            <p>Muscle contraction is a highly regulated process involving electrical signals, chemical messengers, and structural proteins working together to produce movement.</p>
+        </section>
+
+        <section>
+            <h2>Muscle Groups & Functions</h2>
+            <ul>
+            <li><strong>Flexors:</strong> Decrease joint angles (e.g., biceps brachii bends the elbow).</li>
+            <li><strong>Extensors:</strong> Increase joint angles (e.g., triceps brachii straightens the elbow).</li>
+            <li><strong>Abductors:</strong> Move limbs <strong>away</strong> from the midline (e.g., deltoid raises the arm sideways).</li>
+            <li><strong>Adductors:</strong> Move limbs <strong>toward</strong> the midline (e.g., adductor longus brings the thigh inward).</li>
+            <li><strong>Rotators:</strong> Rotate a bone around its axis (e.g., rotator cuff muscles in the shoulder).</li>
+            <li><strong>Levators:</strong> Lift a body part (e.g., levator scapulae elevates the scapula).</li>
+            <li><strong>Depressors:</strong> Lower a body part (e.g., depressor anguli oris lowers the corners of the mouth).</li>
+            </ul>
+            <p>Major muscle groups include the <strong>pectorals</strong> (chest), <strong>latissimus dorsi</strong> (back), <strong>quadriceps</strong> (front thigh), <strong>hamstrings</strong> (back thigh), <strong>gastrocnemius</strong> (calf), and <strong>gluteals</strong> (buttocks). Each group works together to enable complex movements and maintain stability.</p>
+        </section>
+
+        <section>
+            <h2>Muscle Disorders</h2>
+            <ul>
+            <li><strong>Muscular Dystrophy:</strong> Genetic condition leading to progressive muscle weakening and loss of muscle mass. Different types affect various muscle groups and can impact mobility and heart function.</li>
+            <li><strong>Myasthenia Gravis:</strong> Autoimmune disorder causing muscle fatigue and weakness, especially after periods of activity. It often affects muscles controlling the eyes, face, and swallowing.</li>
+            <li><strong>Muscle Strains:</strong> Damage from overstretching or tearing muscle fibers, commonly caused by excessive physical activity or improper lifting techniques. Symptoms include pain, swelling, and limited movement.</li>
+            <li><strong>Cramping:</strong> Sudden, involuntary muscle contractions that can be painful. Causes include dehydration, electrolyte imbalances, or prolonged exercise.</li>
+            </ul>
+            <p>If you experience persistent muscle weakness, pain, or cramps, consult a healthcare professional for diagnosis and treatment.</p>
+        </section>
+
+        <section>
+            <h2>Interactive Quiz</h2>
+            <p>Test your knowledge on the muscular system!</p>
+            <button onclick="startQuiz()">Start Quiz</button>
+            <p id="quizQuestion">Waiting for the quiz...</p>
+            <input type="text" id="quizAnswer" placeholder="Type your answer here">
+            <button onclick="submitAnswer()">Submit Answer</button>
+        </section>
+
+        <section>
+            <h2>References</h2>
+            <ul>
+                <li>Marieb, E. N., & Hoehn, K. (2018). <em>Human Anatomy & Physiology</em> (11th ed.). Pearson.</li>
+                <li>Hall, J. E., & Guyton, A. C. (2020). <em>Guyton and Hall Textbook of Medical Physiology</em> (14th ed.). Elsevier.</li>
+                <li>Drake, R. L., Vogl, W., & Mitchell, A. W. M. (2019). <em>Gray's Anatomy for Students</em> (4th ed.). Elsevier.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Medical Learning Hub | Contact us at info@medicalhub.com</p>
+    </footer>
+
+    <script>
+        const quizQuestions = [
+            {
+            question: "Which muscle type is found in the heart?",
+            answer: "cardiac muscle"
+            },
+            {
+            question: "What is the basic contractile unit of a muscle fiber called?",
+            answer: "sarcomere"
+            },
+            {
+            question: "Which protein interacts with actin to cause muscle contraction?",
+            answer: "myosin"
+            },
+            {
+            question: "Which muscle group is located at the front of the thigh?",
+            answer: "quadriceps"
+            },
+            {
+            question: "What molecule provides energy for muscle contraction?",
+            answer: "atp"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let correctAnswers = 0;
+
+        function startQuiz() {
+            currentQuestion = 0;
+            correctAnswers = 0;
+            document.getElementById("quizAnswer").value = "";
+            showQuestion();
+        }
+
+        function showQuestion() {
+            if (currentQuestion < quizQuestions.length) {
+            document.getElementById("quizQuestion").innerText = quizQuestions[currentQuestion].question;
+            document.getElementById("quizAnswer").value = "";
+            } else {
+            showResults();
+            }
+        }
+
+        function submitAnswer() {
+            if (currentQuestion >= quizQuestions.length) return;
+            let answer = document.getElementById("quizAnswer").value.trim().toLowerCase();
+            if (answer === quizQuestions[currentQuestion].answer) {
+            correctAnswers++;
+            }
+            currentQuestion++;
+            showQuestion();
+        }
+
+        function showResults() {
+            let score = Math.round((correctAnswers / quizQuestions.length) * 100);
+            document.getElementById("quizQuestion").innerText = `Quiz complete! Your score: ${score}% (${correctAnswers} out of ${quizQuestions.length})`;
+            document.getElementById("quizAnswer").value = "";
+        }
+    </script>
+
+</body>
+</html>
+          

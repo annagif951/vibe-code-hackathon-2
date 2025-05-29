@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A comprehensive hub for learning about human anatomy, quizzes, and resources.">
+    <meta name="keywords" content="anatomy, medical learning, quizzes, educational resources">
+    <meta name="author" content="Medical Learning Hub Team">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Medical Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Medical Learning Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Anatomy">Anatomy</a></li>
+                <li><a href="Quizzes">Quizzes</a></li>
+                <li><a href="#feedback">feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+    <button onclick="askChatbot()">Ask AI</button>
+    <div id="chatbot">
+        <h2>Chat with AI</h2>
+        <input type="text" id="userInput" placeholder="Ask a question...">
+        <button onclick="sendMessage()">Send</button>
+        <div id="chatLog"></div>
+        <p id="organ-info">Hover over an organ to see its name</p>
+<input type="text" id="searchBox" placeholder="Search anatomy terms">
+<button onclick="searchAnatomy()">Search</button>
+<div id="results"></div>
+
+    <main>
+        <section id="content">
+            <h2>Introduction to Anatomy</h2>
+            <p>Explore detailed anatomical concepts, systems, and structures...</p>
+        </section>
+        <section id="anatomy">
+            <h2>Anatomical Systems</h2>
+            <ul>
+                <li class="h2"><a href="skeletal.html">Skeletal System</a></li>
+                <li class="h3"><a href="muscular.html">Muscular System</a></li>
+                <li class="h4"><a href="nervous.html">Nervous System</a></li>
+                <li class="h5"><a href="nervous.html">Cardiovascular System</a></li>
+            </ul>
+        </section>
+        <svg id="anatomy-diagram" width="500" height="500">
+    <circle cx="250" cy="250" r="40" fill="blue" class="organ" data-name="Heart"/>
+    <circle cx="150" cy="300" r="30" fill="green" class="organ" data-name="Kidney"/>
+</svg>
+ <section id="quiz">
+            <h2>Test Your Knowledge</h2>
+            <button onclick="startQuiz()">Start Quiz</button>
+            <div id="quizArea">Waiting for the quiz...</div>
+<label for="answerBox">Your Answer:</label>
+<input type="text" id="answerBox" placeholder="Type your answer here" title="Answer input">
+<button onclick="sendAnswer(document.getElementById('answerBox').value)">Submit Answer</button>
+
+        </section>
+        <section id="resources">
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="https://www.ncbi.nlm.nih.gov/">NCBI</a></li>
+                <li><a href="https://www.khanacademy.org/science/health-and-medicine">Khan Academy</a></li>
+                <li><a href="https://www.webmd.com/">WebMD</a></li>
+            </ul>
+        </section>
+        <section id="feedback">
+            <h2>Feedback</h2>
+            <form id="feedbackForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Medical Learning Hub</p>
+        <p class="JP">Follow us on <a href="https://twitter.com/MedicalHub">Twitter</a> and <a href="https://www.facebook.com/MedicalHub">Facebook</a></p>
+        <p class="JP">Contact us at <a href="mailto:info@medicalhub.com" title="Email Medical Learning Hub">info@medicalhub.com</a></p>
+    </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
