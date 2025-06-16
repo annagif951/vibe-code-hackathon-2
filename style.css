@@ -3,7 +3,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-}
 
 header {
     background-color: #007bff;
@@ -39,6 +38,19 @@ nav ul li a {
     background-color: #f4f4f4;
     color: #007bff;
     font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
 }
 
 main {
@@ -183,3 +195,42 @@ footer {
     flex-direction: row;
     justify-content: center;
 }
+h2 li {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #007bff;
+}
+section anatomy {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+button.searchAnatomy {
+    float: left;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+button.searchAnatomy:hover {
+    background-color: #0056b3;
+
+    
+}
+button.searchAnatomy:active {
+    background-color: #004494;
+}
+button.searchAnatomy:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+button .askChatbot() 

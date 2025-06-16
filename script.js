@@ -68,13 +68,10 @@ function showInfo(system) {
     };
 
     document.getElementById(system + "-info").innerHTML = info[system];
+    // Allow chat AI to answer questions about the system
+    let userQuestion = prompt(`Ask a question about the ${system} system:`);
+    if (userQuestion) {
+        askChatbotAboutSystem(system, userQuestion);
+    }
 }
-
-
-
-
-
-
-
-
 
