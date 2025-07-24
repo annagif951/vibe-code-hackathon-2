@@ -132,3 +132,33 @@ function askChatbotAboutSystem(system, question) {
         alert("Error contacting AI: " + error);
     });
 }
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
+function CourseList() {
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://127.0.0.1:8000/api/courses/")
+      .then((response) => {
+        setCourses(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching courses:", error);
+      });
+  }, []);
+
+  return (
+    <div className="course-list">
+      {courses.map((course) => (
+        <div key={course.id} className="course-card">
+          <h3>{course.title}</h3>
+          <p>{course.description}</p>
+          {/* You can style these or animate with hover effects */}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default CourseList;
