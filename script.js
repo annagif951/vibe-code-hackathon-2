@@ -1,164 +1,47 @@
-function startQuiz() {
-    let question = "What is the largest organ in the human body?";
-    let answer = prompt(question);
-    if (answer.toLowerCase() === "skin") {
-        alert("Correct! The skin is the largest organ.");
-    } else {
-        alert("Incorrect. Try again!");
-    }
-}
-document.querySelectorAll('.organ').forEach(organ => {
-    organ.addEventListener('mouseover', () => {
-        document.getElementById('organ-info').textContent = "You are hovering over: " + organ.getAttribute('data-name');
-    });
-});
-let score = 0;
-
-function adaptiveQuiz() {
-    let questions = [
-        { question: "What is the largest organ?", answer: "Skin", difficulty: 1 },
-        { question: "Where does hematopoiesis occur?", answer: "Bone marrow", difficulty: 2 }
-    ];
-
-    let currentQuestion = questions[Math.min(score, questions.length - 1)];
-    let userAnswer = prompt(currentQuestion.question);
-
-    if (userAnswer.toLowerCase() === currentQuestion.answer.toLowerCase()) {
-        score++;
-        alert("Correct! Difficulty will increase.");
-    } else {
-        alert("Incorrect. Try again later.");
-    }
-}
-function searchAnatomy() {
-    let query = document.getElementById('searchBox').value;
-    
-    fetch(`/search?q=${query}`)
-        .then(response => response.json())
-        .then(data => {
-            let resultDiv = document.getElementById('results');
-            resultDiv.innerHTML = data.map(item => `<p><b>${item.title}</b>: ${item.description}</p>`).join('');
-        });
-}
-async function askChatbot() {
-    let question = prompt("Ask a medical question:");
-    
-    let response = await fetch("https://api.openai.com/v1/completions", {
-        method: "POST",
-        headers: { "Authorization": "Bearer YOUR_API_KEY", "Content-Type": "application/json" },
-        body: JSON.stringify({ model: "gpt-4", prompt: question, max_tokens: 100 })
-    });
-
-    let data = await response.json();
-    alert("AI Response: " + data.choices[0].text.trim());
-}
-let socket = new WebSocket("ws://localhost:8000/ws/quiz/");
-
-socket.onmessage = function(event) {
-    document.getElementById("quizArea").innerHTML = "New question: " + event.data;
-};
-
-function sendAnswer(answer) {
-    socket.send(answer);
-}
-function showInfo(system) {
-    let info = {
-        skeletal: "The skeletal system includes the **skull, spine, ribs, and limbs**, protecting vital organs.",
-        muscular: "Muscles are divided into **skeletal, smooth, and cardiac** types for different movements."
-    };
-
-    document.getElementById(system + "-info").innerHTML = info[system];
-    // Allow chat AI to answer questions about the system
-    let userQuestion = prompt(`Ask a question about the ${system} system:`);
-    if (userQuestion) {
-        askChatbotAboutSystem(system, userQuestion);
-    }
-}
-
-// JavaScript for basic interaction
+// 🌗 Theme Toggle
 document.addEventListener("DOMContentLoaded", () => {
-    const loginBtn = document.getElementById("loginBtn");
-    const registerBtn = document.getElementById("registerBtn");
-    const premiumLoginBtn = document.getElementById("premiumLoginBtn");
-    const premiumRegisterBtn = document.getElementById("premiumRegisterBtn");
-
-    if (loginBtn) {
-        loginBtn.addEventListener("click", () => {
-            alert("Redirecting to login...");
-            window.location.href = "/login"; // Replace with your actual login route
-        });
-    }
-
-    if (registerBtn) {
-        registerBtn.addEventListener("click", () => {
-            alert("Redirecting to register...");
-            window.location.href = "/register"; // Replace with your actual register route
-        });
-    }
-
-    if (premiumLoginBtn) {
-        premiumLoginBtn.addEventListener("click", () => {
-            alert("Redirecting to premium login...");
-            window.location.href = "/premium-login"; // Replace with your actual premium login route
-        });
-    }
-
-    if (premiumRegisterBtn) {
-        premiumRegisterBtn.addEventListener("click", () => {
-            alert("Redirecting to premium register...");
-            window.location.href = "/premium-register"; // Replace with your actual premium register route
-        });
-    }
+  const toggleBtn = document.getElementById("themeToggle");
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  }
 });
 
-function askChatbotAboutSystem(system, question) {
-    fetch("https://api.openai.com/v1/completions", {
-        method: "POST",
-        headers: {
-            "Authorization": "Bearer YOUR_API_KEY",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            model: "gpt-4",
-            prompt: `About the ${system} system: ${question}`,
-            max_tokens: 100
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert("AI Response: " + (data.choices && data.choices[0] ? data.choices[0].text.trim() : "No response"));
-    })
-    .catch(error => {
-        alert("Error contacting AI: " + error);
-    });
-}
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+// 📜 Smooth Scroll for Navigation Links
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", function(e) {
+    const targetId = this.getAttribute("href").slice(1);
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      e.preventDefault();
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
 
-function CourseList() {
-  const [courses, setCourses] = useState([]);
+// 📬 Contact Form Validation (if added later)
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", function(e) {
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
 
-  useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/courses/")
-      .then((response) => {
-        setCourses(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching courses:", error);
-      });
-  }, []);
-
-  return (
-    <div className="course-list">
-      {courses.map((course) => (
-        <div key={course.id} className="course-card">
-          <h3>{course.title}</h3>
-          <p>{course.description}</p>
-          {/* You can style these or animate with hover effects */}
-        </div>
-      ))}
-    </div>
-  );
+    if (!email || !message) {
+      e.preventDefault();
+      alert("Please fill in all fields before submitting.");
+    }
+  });
 }
 
-export default CourseList;
+// 🖼️ Image Preloading (if images are added later
+const preloadImages = () => {
+  const images = document.querySelectorAll("img");
+  images.forEach(img => {
+    const src = img.getAttribute("data-src");
+    if (src) {
+      img.src = src; // Set the actual image source
+      img.removeAttribute("data-src"); // Clean up the attribute
+    }
+  });
+};
