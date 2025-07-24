@@ -13,16 +13,35 @@
 <body>
     <header>
         <h1>Welcome to Medical Learning Hub</h1>
+        <div class="auth-buttons">
+            <!-- Standard Authentication buttons -->
+            <button class="btn login" id="loginBtn">Login</button>
+            <button class="btn register" id="registerBtn">Register</button>
+            <!-- Premium Authentication buttons -->
+            <button class="btn premium login" id="premiumLoginBtn">
+                <i class="fas fa-sign-in-alt"></i> Premium Login
+            </button>
+            <button class="btn premium register" id="premiumRegisterBtn">
+                <i class="fas fa-user-plus"></i> Premium Register
+            </button>
+        </div>
+
+
+
+</div>
+ 
+
         <nav>
-            <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#Anatomy">Anatomy</a></li>
-                <li><a href="Quizzes">Quizzes</a></li>
-                <li><a href="#feedback">feedback</a></li>
+            <ul class="nav-list">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#Anatomy">Anatomy</a></li>
+            <li><a href="Quizzes">Quizzes</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li class="nav-login">
+            
             </ul>
         </nav>
     </header>
-    </div> <!-- Close #chatbot div -->
 <main>
     <section id="content">
         <h2>Introduction to Anatomy</h2>
@@ -37,13 +56,15 @@
     <button onclick="askChatbot()">Ask a Medical Question</button>
 
     <section id="anatomy">
-        <h2 >Anatomical Systems</h2>
-        <ul>
-            <li class="h"><a href="skeletal.html">Skeletal System</a></li>
-            <li class="m"><a href="muscular.html">Muscular System</a></li>
-            <li class="n"><a href="nervous.html">Nervous System</a></li>
-            <li class="r"><a href="cardiovascular.html">Cardiovascular System</a></li>
-        </ul>
+       <h2>Explore Anatomy Classes</h2>
+        <p>Click on a class to learn more about the human body systems:</p> 
+        <div class="container">
+<div class="box h"><a href="skeletal.html"> Skeletal System</a></div>
+<div class="box m"><a href="muscular.html">Muscular System</a></div>
+<div class="box n"><a href="nervous.html">Nervous System</a></div>
+<div class="box r"><a href="cardiovascular.html"> Cardiovascular System</a></div>
+</div>
+
     </section>
 
    
@@ -75,6 +96,18 @@
 </main>
 <footer>
     <p>&copy; 2025 Medical Learning Hub</p>
-    <p class="JP">Follow us on <a href="https://twitter.com/MedicalHub">Twitter</a> and <a href="https://www.facebook.com/MedicalHub">Facebook</a></p>
-    <p class="JP">Contact us at <a href="mailto:info@medicalhub.com" title="Email Medical Learning Hub">info@medicalhub.com</a></p>
+    <p>
+        <a href="https://twitter.com/MedicalHub" title="Twitter" target="_blank" rel="noopener" class="social-link">
+            <!-- Twitter SVG Icon -->
+            <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#1DA1F2" xmlns="http://www.w3.org/2000/svg" aria-label="Twitter"></svg>
+                <path d="M22.46 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 0 0 1.964-2.475 8.94 8.94 0 0 1-2.828 1.08A4.48 4.48 0 0 0 11.07 9.03c0 .352.04.695.116 1.022C7.728 9.89 4.1 8.1 1.67 5.149a4.48 4.48 0 0 0-.607 2.254c0 1.555.792 2.93 2 3.736a4.47 4.47 0 0 1-2.03-.56v.057a4.48 4.48 0 0 0 3.6 4.393c-.193.052-.397.08-.607.08-.148 0-.292-.014-.432-.04a4.48 4.48 0 0 0 4.18 3.11A8.98 8.98 0 0 1 2 19.54a12.67 12.67 0 0 0 6.86 2.01c8.23 0 12.74-6.82 12.74-12.74 0-.194-.004-.388-.013-.58A9.1 9.1 0 0 0 24 4.59a8.93 8.93 0 0 1-2.54.697z"/>
+            </svg>
+        </a>
+        <a href="https://www.facebook.com/MedicalHub" title="Facebook" target="_blank" rel="noopener" class="social-link">
+            <img src="facebook-icon.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="mailto:info@medicalhub.com" title="Email Medical Learning Hub" class="social-link">
+            <img src="email-icon.png" alt="Email" class="social-icon">
+        </a>
+    </p>
 </footer>

@@ -75,3 +75,60 @@ function showInfo(system) {
     }
 }
 
+// JavaScript for basic interaction
+document.addEventListener("DOMContentLoaded", () => {
+    const loginBtn = document.getElementById("loginBtn");
+    const registerBtn = document.getElementById("registerBtn");
+    const premiumLoginBtn = document.getElementById("premiumLoginBtn");
+    const premiumRegisterBtn = document.getElementById("premiumRegisterBtn");
+
+    if (loginBtn) {
+        loginBtn.addEventListener("click", () => {
+            alert("Redirecting to login...");
+            window.location.href = "/login"; // Replace with your actual login route
+        });
+    }
+
+    if (registerBtn) {
+        registerBtn.addEventListener("click", () => {
+            alert("Redirecting to register...");
+            window.location.href = "/register"; // Replace with your actual register route
+        });
+    }
+
+    if (premiumLoginBtn) {
+        premiumLoginBtn.addEventListener("click", () => {
+            alert("Redirecting to premium login...");
+            window.location.href = "/premium-login"; // Replace with your actual premium login route
+        });
+    }
+
+    if (premiumRegisterBtn) {
+        premiumRegisterBtn.addEventListener("click", () => {
+            alert("Redirecting to premium register...");
+            window.location.href = "/premium-register"; // Replace with your actual premium register route
+        });
+    }
+});
+
+function askChatbotAboutSystem(system, question) {
+    fetch("https://api.openai.com/v1/completions", {
+        method: "POST",
+        headers: {
+            "Authorization": "Bearer YOUR_API_KEY",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            model: "gpt-4",
+            prompt: `About the ${system} system: ${question}`,
+            max_tokens: 100
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert("AI Response: " + (data.choices && data.choices[0] ? data.choices[0].text.trim() : "No response"));
+    })
+    .catch(error => {
+        alert("Error contacting AI: " + error);
+    });
+}

@@ -306,3 +306,77 @@ footer {
     box-shadow: 0 8px 24px rgba(0,123,255,0.10);
     border-color: #007bff;
 }
+.container {
+  display: flex;           /* Arrange children horizontally */
+  gap: 20px;               /* Space between boxes */
+  padding: 20px;           /* Padding around the container */
+  background: #f5f5f5;
+}
+
+.box {
+  padding: 20px;           /* Padding inside each box */
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1;                 /* Optional: Makes each box expand equally */
+  text-align: center;
+}
+.box a {
+    text-decoration: none;   /* Remove underline from links */
+    color: #007bff;         /* Link color */
+    font-weight: bold;      /* Bold text */
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.login {
+  background: linear-gradient(to right, #667eea, #764ba2);
+}
+
+.register {
+  background: linear-gradient(to right, #ff5858, #f09819);
+}
+.premium {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 40px;
+  padding: 14px 32px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.premium:hover {
+  background: linear-gradient(135deg, #4ca1af, #2c3e50);
+  transform: scale(1.05);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+.auth-buttons i {
+  margin-right: 8px;
+}
+
