@@ -263,4 +263,16 @@ footer a:hover {
 .note-list a:hover {
   text-decoration: underline;
 }
+/* Lock the body width and hide horizontal overflow */
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure no elements exceed the viewport width */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
 
