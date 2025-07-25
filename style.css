@@ -237,3 +237,30 @@ footer a:hover {
 #user-auth .button {
   margin: 0.5rem;
 }
+#download-notes {
+  background-color: #f8f8ff;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem;
+}
+
+.note-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.note-list li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.note-list a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.note-list a:hover {
+  text-decoration: underline;
+}
+
